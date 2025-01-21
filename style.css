@@ -1,0 +1,555 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+
+main.contenido {
+    flex: 1;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Encabezado */
+#navBar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4a4a;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 2px solid red;
+    z-index: 10;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.menu li a.agendatuconsultoria {
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.menu li a:hover {
+    color: white;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.hamburger div {
+    background-color: white;
+    height: 4px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+
+/* Pie de página */
+.footer {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 30px;
+    padding: 10px 0;
+    flex-direction: row; /* Asegura que el contenido esté en fila por defecto */
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Cambia a una disposición vertical en pantallas pequeñas */
+        align-items: center;  /* Centra los elementos */
+    }
+}
+.logo {
+    display: flex; /* Para alinear el logo y el texto */
+    align-content: center;
+    justify-content: flex-start; /* Mantén los elementos alineados al inicio */
+    margin-bottom: 0.8rem;
+}
+
+.logo img {
+    max-width: 30px; /* Ajusta el tamaño del logo */
+    width: 100%;
+    margin-left: 1rem; /* Espacio entre el logo y el texto */
+}
+
+#copyright {
+    color: red;
+    text-align: center;
+    margin: 0 auto; /* Centra horizontalmente */
+    font-size: 0.7rem;
+    flex: 1; /* Toma todo el espacio disponible para centrar */
+}
+
+.RedesSociales {
+    position: fixed !important;
+    bottom: 20px !important; /* Distancia desde la parte inferior */
+    right: 20px !important; /* Distancia desde la derecha (asegúrate de que este valor no sea 0) */
+    display: flex;
+    flex-direction: row; /* Los íconos estarán apilados verticalmente */
+    gap: 10px; /* Espaciado entre los íconos */
+    z-index: 999; /* Manténlo visible sobre otros elementos */
+    text-align: right; /* Asegura alineación correcta */
+    
+}
+
+.RedesSociales a {
+    text-decoration: none;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    width: 20px; /* Tamaño del ícono */
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.0rem; /* Tamaño del ícono o texto */
+    transition: background-color 0.3s;
+    
+}
+
+.RedesSociales a:hover {
+    color: #ff4a4a;
+}
+
+
+
+/* Responsividad */
+@media (max-width: 1135px) {
+    #navBar {
+        left: auto;
+        right: 20px;
+        transform: none;
+        padding: 10px 20px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #ff4a4a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu li a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        transition: color 0.3s;
+        padding: 8px 12px;
+        border-radius: 4px;
+        white-space: nowrap;
+    }
+    
+    .menu li a.agendatuconsultoria {
+        font-size: 0.8rem;
+        font-weight: 900;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu li a.tecuentocomopodeslograrlo {
+        font-size: 0.7rem;
+        font-weight: 900;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
+
+/* Pie de página */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+
+    padding: 20px 10px; /* Espaciado interno */
+    flex-wrap: wrap; /* Permite que los elementos salten a nueva línea en pantallas pequeñas */
+}
+
+/* Sección del Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 30px; /* Ajusta el tamaño del logo */
+}
+
+/* Copyright */
+#copyright {
+    text-align: center;
+    font-size: 0.9rem; /* Tamaño ajustado */
+}
+
+/* Ocultar el copyright en pantallas pequeñas */
+@media (max-width: 670px) {
+    #copyright {
+        display: none; /* Oculta la sección de copyright */
+    }
+}
+/* AQUI EMPIEZA EL CSS DE COACHING.HTML */
+
+
+#coachingbody {
+    background-color: rgba(66, 66, 66, 0.9);
+}
+
+.banneratccoaching {
+    background: black;
+    text-align: center;
+    height: 63px;
+    padding: 3rem;
+}
+
+/* Main Content Styles */
+
+
+.maincontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    margin-top: 4rem;
+    padding: 1rem;
+    background-color: rgba(66, 66, 66, 0.9);
+    max-width: 1400px;
+    
+}
+
+.text-image {
+    display: flex;
+    justify-content: center;
+    width: 1300px;
+    height: 450px;
+}
+
+.texto1 {
+    width: 60%;
+    padding: 1rem;
+}
+
+.imagen {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #757575;
+    border-radius: 10px;
+}
+
+.imagen img {
+    max-width: auto;
+    border-radius: 10px;
+}
+
+.botoncta1 {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #e53935;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.botoncta1:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+.RedesSociales-coaching {
+    position: fixed !important;
+    bottom: 20px !important; /* Distancia desde la parte inferior */
+    right: 20px !important; /* Distancia desde la derecha (asegúrate de que este valor no sea 0) */
+    display: flex;
+    flex-direction: row; /* Los íconos estarán apilados verticalmente */
+    gap: 10px; /* Espaciado entre los íconos */
+    z-index: 999; /* Manténlo visible sobre otros elementos */
+    text-align: right; /* Asegura alineación correcta */
+    
+}
+
+.RedesSociales-coaching a {
+    text-decoration: none;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    width: 20px; /* Tamaño del ícono */
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.0rem; /* Tamaño del ícono o texto */
+    transition: background-color 0.3s;
+    
+}
+
+.RedesSociales a:hover {
+    color: #ff4a4a;
+}
+z
+
+/* AQUI EMPIEZA EL CSS DE AGENDATUCONSULTORIA.HTML */
+
+
+.bodyagendatuconsultoria {
+    font-family: Arial, sans-serif;
+    background: #757575;
+    color: #757575;
+    line-height: 1.6;
+}
+
+
+.banneratc {
+    background: black;
+    text-align: center;
+    height: 63px;
+    padding: 1rem;
+}
+
+.calltoaction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #757575;
+
+}
+
+#parrafo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: black;
+    text-align: center;
+    background: firebrick;
+    width: 450px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    font-weight: 1000;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+
+}
+
+/* Icono Flecha */
+.icono {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem; /* Tamaño de la flecha */
+    background-color: #757575;
+}
+
+
+
+.contentagendatuconsultoria {
+    display: flex;
+    justify-content: space-between;
+    padding: 8rem;
+    background: #757575;
+    color: #fff;
+}
+
+.instructions {
+    width: 60%;
+}
+
+.instructions h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.instructions ol li {
+    margin: 0.5rem 0;
+}
+
+/* AQUI EMPIEZA EL CSS DE TECUENTOCOMOPODESLOGRARLO.HTML */
+
+.body_tecuentocomopodeslograrlo {
+    background: #757575;
+}
+.banneratc {
+    background: black;
+    height: 63px;
+    padding: 1rem;
+}
+
+.contenido_tecuentocomopodeslograrlo {
+    text-align: center;
+}
+
+.tccpl {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.contenedor_paso1 {
+    display: flex;
+    gap: 10px;
+    width: 100vw; /* Ancho completo de la pantalla */
+    justify-content: center;
+}
+
+.paso1de2 {
+    color: red;
+    font-weight: bold;
+    font-size: x-large;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.miraelvideo {
+    color: black;    
+    font-weight: bold;
+    font-size: x-large;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.videopaso1 {
+    width: 800px;  /* Ajusta el ancho */
+    height: 450px; /* Ajusta la altura, opcional */
+
+}
+
+.contenedor_paso2 {
+    display: flex;
+    gap: 10px;
+    width: 100vw; /* Ancho completo de la pantalla */
+    justify-content: center;
+}
+
+.paso2de2 {
+    color: red;
+    font-weight: bold;
+    font-size: x-large;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.agendasesion1 {
+    color: black;    
+    font-weight: bold;
+    font-size: x-large;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* AQUI EMPIEZA EL CSS DE TESTIMONIOS.HTML */
+
+.body_testimonios {
+    background-color: #757575;
+
+}
+
+.algunostestimonios {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.tomaraccion {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_videos {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Espacio entre las filas */
+    height: 900px;
+}
+
+.row1,
+.row2 {
+    display: flex;
+    justify-content: center; /* Centra los videos en la fila */
+    gap: 15px; /* Espacio entre videos */
+}
+
+video {
+    width: 200px; /* Ajusta el ancho del video */
+    height: 400px; /* Ajusta la altura del video */
+    background-color: black; /* Para representar los videos si no hay fuente */
+}
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>MATÍAS VILLAGRA CLUB</title>
+
+<!-- Enlace a Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body id="bodyagendatuconsultoria"
+    <header>
+        <nav id="navBar">
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="menu">
+                <li><a href="../index.html" class="inicio">INICIO</a></li>
+                <li><a href="coaching.html" class="coaching">COACHING</a></li>
+                <li><a href="#" class="agendatuconsultoria">AGENDA UNA CONSULTORÍA GRATIS*</a></li>
+                <li><a href="tecuentocomolograrlo.html" class="tecuentocomopodeslograrlo">TE CUENTO CÓMO PODES LOGRARLO</a></li>
+                <li><a href="testimonios.html" class="testimonios">TESTIMONIOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ESTRUCTURA MAIN -->
+    <main class="agendatuconsultoriacontenido">
+        <section class="banneratc">
+        </section>
+        <div class="calltoaction">
+            <p id="parrafo">Si quieres mejorar tu cuerpo y tu salud pero te sientes abrumado por tu rutina diaria y te cuesta ver cambios...</p>
+        </div> 
+        <div class="icono">
+            <i class="fa-regular fa-circle-down"></i> <!-- Flecha hacia abajo -->
+        </div>
+        <section class="contentagendatuconsultoria"> 
+
+            <div class="instructions">
+            <h1>¡Quiero lograr mis objetivos! ¿Cómo agendo mi asesoría?</h1>
+            <ol>
+                <li>Selecciona un día disponible en el calendario ✏️</li>
+                <li>Elige un horario que tengas libre ⏰</li>
+                <li>Completa con tus datos para que te podamos mandar el enlace 📎</li>
+            </ol>
+            <p>Y listo, diste el primer paso hacia tu meta. El día de la llamada te va a llegar un enlace a Meet por Correo y por WhatsApp.</p>
+            </div>
+        </section>  
+    </main>
+
+    <!-- ESTRUCTURA FOOTER -->
+    <footer class="footer">
+        <section class="logo">
+            <a href="../index.html"><img src="../icons/LogoSample_ByTailorBrands.jpg" alt="Logo del Club"></a>
+        </section>
+        <section class="RedesSociales">
+            <a href="https://www.instagram.com/luismatiasvillagra/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/@matiasvillagraifbb?si=2wRk8s7--Pd2D40J" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://wa.me/3815265781" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </section>
+        <section id="copyright">
+            <p>© 2025 Matías Villagra. Todos los derechos reservados.</p>
+        </section>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.querySelector(".hamburger");
+            const menu = document.querySelector(".menu");
+
+            hamburger.addEventListener("click", function () {
+                menu.classList.toggle("active");
+                hamburger.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>
+    
