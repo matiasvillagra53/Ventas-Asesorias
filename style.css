@@ -276,27 +276,57 @@ main.contenido {
     flex-direction: column;
     align-items: center;
     margin: 2rem auto;
-    margin-top: 4rem;
+    margin-top: 20px;
     padding: 1rem;
     background-color: rgba(66, 66, 66, 0.9);
-    max-width: 1400px;
+    width: 1400px;
     
 }
 
 .text-image {
     display: flex;
     justify-content: center;
-    width: 1300px;
-    height: 450px;
+    width: 1400px;
+    height: 500px;
+    column-gap: 20px;
+    flex: 2;
 }
 
 .texto1 {
-    width: 60%;
-    padding: 1rem;
+    width: 70%;
+    font-size: 12px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    overflow: hidden; /* Oculta el contenido que desborde el div */
+    white-space: normal; /* Permite el salto de línea */
+    height: auto; /* Permite que el alto se ajuste */
+    word-wrap: break-word; /* Rompe palabras largas */
+    color: white;
+    font-family: Arial, sans-serif; 
+    
+}
+
+.coachingtexto_titulo {
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    font-weight: 300; /* Ligero */
+    line-height: 1.6; /* Espaciado proporcional para texto pequeño */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+    
+}
+
+.texto1 p {
+    margin: 0; /* Elimina márgenes si no los necesitas */
+    word-wrap: break-word; /* Fuerza el salto de palabras largas */
+    text-overflow: ellipsis; /* Agrega "..." si el texto no cabe (opcional, necesita overflow:hidden) */
+    margin-bottom: 12px;
+    font-weight: 300; /* Ligero */
+    line-height: 1.4; /* Espaciado proporcional para texto pequeño */
 }
 
 .imagen {
-    width: 35%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,7 +335,8 @@ main.contenido {
 }
 
 .imagen img {
-    max-width: auto;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
 }
 
@@ -368,6 +399,11 @@ z
     line-height: 1.6;
 }
 
+.agendatuconsultoriacontenido {
+    background: #757575;
+
+}
+
 
 .banneratc {
     background: black;
@@ -401,7 +437,6 @@ z
     font-weight: 1000;
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
-
 }
 
 /* Icono Flecha */
@@ -417,14 +452,16 @@ z
 
 .contentagendatuconsultoria {
     display: flex;
-    justify-content: space-between;
-    padding: 8rem;
-    background: #757575;
-    color: #fff;
+    justify-content: center;
+    column-gap: 20px;
+    margin-top: 20px;
+    background: #757575;   
+    height: auto;
+    margin-bottom: 200px;
 }
 
 .instructions {
-    width: 60%;
+    width: 40%;
 }
 
 .instructions h1 {
@@ -435,6 +472,13 @@ z
 .instructions ol li {
     margin: 0.5rem 0;
 }
+
+.calendly_agendatuconsultoria {
+    overflow: hidden;
+    height: 350px;
+    
+}
+
 
 /* AQUI EMPIEZA EL CSS DE TECUENTOCOMOPODESLOGRARLO.HTML */
 
